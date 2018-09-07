@@ -31,6 +31,17 @@ class Player extends Entity {
     constructor() {
         super();
         this.sprite += "char-boy.png";
+        this.moving = false; //check to see if player is moving
+        this.win = false; //win logic
+    }
+
+    update(dt){
+        super.update();
+        //check conditions for player win
+        if (this.isOutOfBoundsY && !this.moving && !this.win){
+            alert("You made it across!");
+            this.win = true;
+        }
     }
 
     handleInput(input) {
