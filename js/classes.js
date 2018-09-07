@@ -44,6 +44,11 @@ class Player extends Entity {
         }
     }
 
+    render(){
+        super.render();
+        this.moving = false; //set the moving variable to false on each render. it's set to true in handleInput
+    }
+
     handleInput(input) {
         switch (input) {
             case 'left':
@@ -62,6 +67,7 @@ class Player extends Entity {
             default:
                 break;
         }
+        this.moving = true; //set moving to true because it's in the input
     }
 }
 
