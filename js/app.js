@@ -34,7 +34,7 @@
 const player = new Player();
 
 /* --- create an instance of the player -- */
-const allEnemies = [...Array(3)].map((_, i) => new Enemy(0, i+1));
+const allEnemies = [...Array(3)].map((_, i) => new Enemy((Math.random(10)), i+1));
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
