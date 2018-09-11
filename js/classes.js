@@ -84,7 +84,7 @@ class Enemy extends Entity {
         if(this.isOutOfBoundsX){
             this.x = -1;
         } else {
-            this.x += dt ;
+            this.x += dt * (Math.random(150)*7);
         }
 
     }
