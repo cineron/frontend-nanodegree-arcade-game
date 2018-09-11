@@ -84,7 +84,7 @@ class Enemy extends Entity {
         if(this.isOutOfBoundsX){
             this.x = -1;
         } else {
-            const max = 6;
+            const max = 3;
             const min = 1;
             let randomNum = (Math.floor(Math.random()*(max-min+1)+min));
             this.x += dt * randomNum;
