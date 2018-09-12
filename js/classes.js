@@ -39,7 +39,7 @@ class Player extends Entity {
         super.update();
         //check conditions for player win
         if (this.isOutOfBoundsY && !this.moving && !this.win){
-            alert("You made it across!");
+            console.log("You made it across!");
             this.win = true;
         }
     }

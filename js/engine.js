@@ -25,6 +25,18 @@ var Engine = (function(global) {
         lastTime,
         frameID; //from https://matthewcranford.com/arcade-game-walkthrough-part-6-collisions-win-conditions-and-game-resets/
 
+    //modal idea from crandford walkthrough
+    const modal = document.querySelector('.modal-content');
+    const replay = document.querySelector('.modal-button');
+
+    //listener for replay button from Crandford walkthrough
+    replay.addEventListener('click', function () {
+        modal.classList.toggle('hide');
+        player.reset();
+        player.win = false;
+        win.requestAnimationFrame(main);
+    });
+
     canvas.width = 505;
     canvas.height = 606;
     doc.body.appendChild(canvas);
@@ -60,6 +72,8 @@ var Engine = (function(global) {
         if (player.win === true){
             console.log("Game over");
             win.cancelAnimationFrame(frameID);
+            // modal.classList.toggle('hide');
+            modal.style.display = "block";
         }else{
             frameID = win.requestAnimationFrame(main);
         }
@@ -94,7 +108,7 @@ var Engine = (function(global) {
         allEnemies.forEach(enemy => {
             if(enemy.checkCollisions(player) || player.checkCollisions(enemy)) {
                 player.y = 5;
-                player.x = 2;
+                player.x = 1;
             }
         });
     }
