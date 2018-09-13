@@ -12,6 +12,8 @@
  * This engine makes the canvas' context (ctx) object globally available to make 
  * writing app.js a little simpler to work with.
  */
+let winner = "winning";//can i set a variable in this file and call it in another file?
+const winningText = document.querySelector('.modal-content p');
 
 var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
@@ -33,6 +35,7 @@ var Engine = (function(global) {
     span.onclick = function() {
     modal.style.display = "none";
     };
+    
 
     //listener for replay button from Crandford walkthrough
     replay.addEventListener('click', function () {

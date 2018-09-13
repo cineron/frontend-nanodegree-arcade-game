@@ -39,7 +39,10 @@ class Player extends Entity {
         super.update();
         //check conditions for player win
         if (this.isOutOfBoundsY && !this.moving && !this.win){
-            console.log("You made it across!");
+            console.log(`"You made it across!" ${winner}`); //You can call a variable declared in another file.
+            winningText.innerText = "Winner!";
+
+
             this.win = true;
         }
     }
