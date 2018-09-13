@@ -26,8 +26,13 @@ var Engine = (function(global) {
         frameID; //from https://matthewcranford.com/arcade-game-walkthrough-part-6-collisions-win-conditions-and-game-resets/
 
     //modal idea from crandford walkthrough
-    const modal = document.querySelector('.modal-content');
+    const modal = document.querySelector('.modal');
     const replay = document.querySelector('.modal-button');
+    var span = document.getElementsByClassName("close")[0];
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+    modal.style.display = "none";
+    };
 
     //listener for replay button from Crandford walkthrough
     replay.addEventListener('click', function () {

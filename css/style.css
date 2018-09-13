@@ -23,13 +23,22 @@ body {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 30%;
+    height: 15%;
 }
 
 /* The Close Button */
-.close .modal-button{
+.close {
     color: #aaaaaa;
     float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal-button {
+    color: #aaaaaa;
+    float: inherit;
+    margin: 1.5em .5em;
     font-size: 28px;
     font-weight: bold;
 }
