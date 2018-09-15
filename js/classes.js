@@ -3,7 +3,7 @@
 class Entity {
     constructor() {
         this.sprite = "images/";
-        this.x = 1;
+        this.x = 2;
         this.y = 5;
     }
 
@@ -72,6 +72,14 @@ class Player extends Entity {
         }
         this.moving = true; //set moving to true because it's in the input
     }
+    
+    //player reset
+    reset() {
+        this.x = (Math.floor(Math.random()*(4-0+1)+0));         // Start x-axis position
+        this.y = 5;  // Start y-axis position
+        this.win = false;   // Reset victory tracker
+    }
+
 }
 
 class Enemy extends Entity {
@@ -83,13 +91,13 @@ class Enemy extends Entity {
     }
 
     update(dt){
+        const max = 3;
+        const min = 1;
+        let randomNum = (Math.floor(Math.random()*(max-min+1)+min));
         super.update();
         if(this.isOutOfBoundsX){
             this.x = -1;
         } else {
-            const max = 3;
-            const min = 1;
-            let randomNum = (Math.floor(Math.random()*(max-min+1)+min));
             this.x += dt * randomNum;
         }
 

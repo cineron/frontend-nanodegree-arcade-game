@@ -15,6 +15,25 @@
 let winner = "winning";//can i set a variable in this file and call it in another file?
 const winningText = document.querySelector('.modal-content p');
 
+function test() {
+    console.log("do nothing");
+}
+
+//modal idea from crandford walkthrough
+const modal = document.querySelector('.modal');
+const replay = document.querySelector('.modal-button');
+var span = document.getElementsByClassName("close")[0];
+// When the user clicks on <span> (x), close the modal
+
+function closeModal() {
+    modal.style.display = "none";
+}
+
+// span.onclick = closeModal();
+span.addEventListener('click', () => closeModal())
+
+
+
 var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
@@ -27,23 +46,18 @@ var Engine = (function(global) {
         lastTime,
         frameID; //from https://matthewcranford.com/arcade-game-walkthrough-part-6-collisions-win-conditions-and-game-resets/
 
-    //modal idea from crandford walkthrough
-    const modal = document.querySelector('.modal');
-    const replay = document.querySelector('.modal-button');
-    var span = document.getElementsByClassName("close")[0];
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-    modal.style.display = "none";
-    };
-    
-
     //listener for replay button from Crandford walkthrough
     replay.addEventListener('click', function () {
-        modal.classList.toggle('hide');
-        player.reset();
-        player.win = false;
-        win.requestAnimationFrame(main);
+    // modal.classList.toggle('hide');
+    closeModal();
+    // player.reset();
+    init();
+    player.win = false;
+    win.requestAnimationFrame(main);
     });
+    
+
+
 
     canvas.width = 505;
     canvas.height = 606;
@@ -158,7 +172,7 @@ var Engine = (function(global) {
             row, col;
         
         // Before drawing, clear existing canvas
-        ctx.clearRect(0,0,canvas.width,canvas.height)
+        ctx.clearRect(0,0,canvas.width,canvas.height);
 
         /* Loop through the number of rows and columns we've defined above
          * and, using the rowImages array, draw the correct image for that
@@ -201,7 +215,12 @@ var Engine = (function(global) {
      */
     function reset() {
         // noop
+        allEnemies.forEach(function(enemy) {
+            enemy.render();
+        });
+        player.reset();
     }
+    
 
     /* Go ahead and load all of the images we know we're going to need to
      * draw our game level. Then set init as the callback method, so that when
