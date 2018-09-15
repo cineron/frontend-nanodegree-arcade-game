@@ -1,6 +1,36 @@
 frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+A Frogger®-like clone created for [Udacity's](https://www.udacity.com) Front End Developer Nanodegree. Dare to cross the road!
+<br>
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## Table of Contents
+- [Frontend Nanodegree Arcade Game](#frontend-nanodegree-arcade-game)
+    - [Table of Contents](#table-of-contents)
+    - [Getting Started](#getting-started)
+    - [How to Play](#how-to-play)
+        - [Overview](#overview)
+        - [Instructions](#instructions)
+    - [Dependencies](#dependencies)
+    - [Acknowledgements](#acknowledgements)
+    - [TODO](#todo)
+
+## Getting Started
+1. Download or clone the repository.
+2. In the project folder, open the [index.html](./index.html) with your default browser.
+
+
+
+## How to Play
+### Overview
+The object of the game is to move the character from the green tiles to the blue tiles at the top of the screen without making contact with the bug characters moving left to right.
+
+### Instructions
+To move the character use the arrow keys.
+
+### Dependencies
+A modern browser running JavaScript is all that is needed.
+
+### Acknowledgements
+See source code for acknowledgements. Many others' ideas were used in creating this game.
+
