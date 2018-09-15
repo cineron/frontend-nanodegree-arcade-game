@@ -33,4 +33,5 @@ A modern browser running JavaScript is all that is needed.
 
 ### Acknowledgements
 See source code for acknowledgements. Many others' ideas were used in creating this game.
+This README.md is based off of https://github.com/bloom305/FEND-ArcadeGame/blob/master/README.md
 
