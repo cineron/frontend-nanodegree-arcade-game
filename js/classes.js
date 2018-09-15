@@ -1,21 +1,23 @@
-// from the Roderick follow along
+// from the Roderick follow along, the idea is to separate out the player and enemy classes.
 
+//a super class for both player and enemy
 class Entity {
     constructor() {
+        //pull in the image file and place them.
         this.sprite = "images/";
         this.x = 2;
         this.y = 5;
     }
-
+    //set the board boundaries
     update(dt) {
         this.isOutOfBoundsX = this.x > 5;
         this.isOutOfBoundsY = this.y < 1;
     }
-
+    //place the players
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x * 100, this.y * 80);
     }
-
+    //collision check
     checkCollisions(playerOrEnemy){
         if (this.y === playerOrEnemy.y){
             if (this.x >= playerOrEnemy.x - 0.74 && this.x <= playerOrEnemy.x + 0.55){
@@ -26,7 +28,7 @@ class Entity {
         }
     }
 }
-
+//create the player class
 class Player extends Entity {
     constructor() {
         super();
@@ -51,7 +53,7 @@ class Player extends Entity {
         super.render();
         this.moving = false; //set the moving variable to false on each render. it's set to true in handleInput
     }
-
+    //determine how the players move on the board
     handleInput(input) {
         switch (input) {
             case 'left':
@@ -81,7 +83,7 @@ class Player extends Entity {
     }
 
 }
-
+//create the Enemy players
 class Enemy extends Entity {
     constructor(x, y) {
         super();
@@ -91,6 +93,8 @@ class Enemy extends Entity {
     }
 
     update(dt){
+        //use a random number to place the enemies
+        //this was my own idea and implementation
         const max = 3;
         const min = 1;
         let randomNum = (Math.floor(Math.random()*(max-min+1)+min));
